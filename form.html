@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html lang="el">
+    <head>
+        <link rel="stylesheet" href="external_stylesheet.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Εγγραφή</title>
+        <script src="external_javascript.js"></script>
+    </head>
+    <body>
+        <h5>Στοιχεία Εγγραφής</h5>
+        <form>
+			<fieldset>
+				<legend>Ονοματεπώνυμο</legend>
+				<p>Όνομα<input id ="id1" type="text" name="firstName" autocomplete="on" required></p>
+				<p>Eπώνυμο<input  type="text" name="lastName" autocomplete="on" required></p>
+			</fieldset>
+			<fieldset>
+				<legend>Τόπος Κατοικίας</legend>
+				<p>Οδός<input type="text" name="address1" required></p>
+				<p>Περιοχή<input  type="text" name="address2" required></p>
+				<p>Ταχυδρομικός Κώδικας<input type="text" name="address3" required></p>
+				<p>Xώρα<input type="text" name="address4" autocomplete="country" list="user_country" required></p>
+				<details>
+					<summary>Περισσότερα</summary>
+					<p>Όροφος<input type="number" name="address5"></p>
+					<p>Κουδούνι<input type="text" name="address6"></p>
+				</details>
+				<datalist id ="user_country">
+					<option>Ελλάδα</option>
+					<option>Κύπρος</option>
+				</datalist>
+			</fieldset>
+			<fieldset>
+				<legend>Τηλέφωνα</legend>
+				<p>Κινητό τηλέφωνο<input type="tel" placeholder="+30 6955555555" name="phoneNum" required></p>
+				<details>
+					<summary>Περισσότερα</summary>
+					<p>Σταθερό τηλέφωνο<input type="tel" placeholder="210-0000000" name="number"></p>
+				</details>
+			</fieldset>
+			<fieldset>
+				<legend>Σημαντικές Πληροφορίες</legend>
+				<p>Εmail<input type="email" placeholder="email@gmail.com" name="email" autocomplete="email" list="user_emails" required></p>
+				<p>Ηλικία<input type="number" id="age" name="age" min="16" max="100" oninput="AgeValidator();" required></p>
+				<p id="result"></p>
+				<p>Ημερομηνία Γέννησης<input type="date" name="bday" required></p>
+				<datalist id ="user_emails">
+					<option>abc@gmail.com</option>
+					<option>xyz@yahoo.gr</option>
+				</datalist>
+			</fieldset>
+			<fieldset>
+				<legend>Στοιχεία Χρήστη</legend>
+				<p>Username<input type="text" name="username" required></p>
+					<p>Password<input id ="password" type="password" name="password" oninput="setPasswordConfirmValidity();" required></p>
+					<p>Password<input id ="confirm_password" type="password" name="password" oninput="setPasswordConfirmValidity();" required></p>
+					<p id="pass"></p>
+			</fieldset>
+			<fieldset>
+				<legend>Ερωτηματολόγιο</legend>
+				<p>Ποια είναι η εκπαίδευσή σας;
+					<select name="studies" id="studies">
+						<option>Δημοτικό</option>
+						<option>Γυμνάσιο</option>
+						<option>Λύκειο</option>
+						<option>ΑΕΙ/ΤΕΙ</option>
+						<option>Άλλο</option>
+					</select>
+				</p>
+				<details>
+					<summary>Άλλο</summary>
+				<textarea rows="1" cols="50"></textarea>
+				</details>
+				<p>Που εργάζεστε
+					<select name="job" id="job">
+						<option>Άνεργος/η</option>
+						<option>Ιδιωτικός τομέας</option>
+						<option>Δημόσιος τομέας</option>
+						<option>Αυτοαπασχολούμενος/η</option>
+						<option>Άλλο</option>
+					</select>
+				</p>
+				<details>
+					<summary>Άλλο</summary>
+				<textarea rows="1" cols="50"></textarea>
+				</details>
+				<p>Ποιες ξένες γλώσσες γνωρίζετε;</p>
+				<textarea rows="1" cols="50" placeholder="πχ Αγγλικά, Γερμανικά"></textarea>
+				<p>Είστε παντρεμένος/η;</p>
+					<input type="radio"  name="marriage" value="yes">
+					<label for="yes">Ναι</label><br>
+					<input type="radio" name="marriage" value="no">
+					<label for="no">Όχι</label><br>
+				<p>Έχετε παιδιά;</p>
+				<input type="radio" name="kids" value="yes">
+					<label for="yes">Ναι</label><br>
+					<input type="radio" name="kids" value="no">
+					<label for="no">Όχι</label><br>
+				<p>Παρακαλώ επιλέξτε την ηλικία σας:</p>
+					<input type="radio" id="age1" name="age" value="18">
+					<label for="age1">0 - 18</label><br>
+					<input type="radio" id="age2" name="age" value="30">
+					<label for="age2">19 - 30</label><br>
+					<input type="radio" id="age3" name="age" value="60">
+					<label for="age3">31 - 60</label><br>  
+					<input type="radio" id="age4" name="age" value="100">
+					<label for="age4">61 - 100</label><br><br>
+				<p>Ποιο είναι το αγαπημένο σας είδος κουζίνας;
+					<select name="cuisine" >
+						<option>Ελληνική</option>
+						<option>Ιταλική</option>
+						<option>Ινδική</option>
+						<option>Κινέζικο</option>
+						<option>Άλλο</option>
+					</select>
+				</p>
+				<details>
+					<summary>Άλλο</summary>
+				<textarea rows="1" cols="50"></textarea>
+				</details>
+				<p>Ποιο είναι το αγαπημένο σας είδος μουσικής;
+					<select name="cuisine" id="cuisine">
+						<option>Κλασσική</option>
+						<option>Ροκ</option>
+						<option>Ποπ</option>
+						<option>Λαϊκά</option>
+						<option>Έντεχνο</option>
+						<option>Άλλο</option>
+					</select>
+				</p>
+				<details>
+					<summary>Άλλο</summary>
+				<textarea rows="1" cols="50"></textarea>
+				</details>
+				<p>Έχετε κατοικίδιο;</p>
+					<input type="radio" id="yes" name="pet" value="yes">
+					<label for="yes">Ναι</label><br>
+					<input type="radio" id="no" name="pet" value="no">
+					<label for="no">Όχι</label><br>
+				
+				<p>Πως αξιοποιείτε τον ελεύθερό σας χρόνο;
+				<p>   
+				<textarea rows="1" cols="50" placeholder="Χόμπυ"></textarea>
+				<p>  
+			</fieldset>
+		</form>
+        <button id="submit" onclick="myFunction()">Υποβολή</button>
+        <p id="last"></p>
+    </body>
+</html>

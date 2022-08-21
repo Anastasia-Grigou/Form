@@ -1,0 +1,148 @@
+@font-face {
+    font-family: myArial;
+    src: url(Arial.woff);
+  }
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color:aliceblue;
+    font-family: myArial;
+    text-align: justify;
+    margin-top: 3em;
+}
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color:rgb(18, 0, 83);
+  }
+h2{
+    font-size: 1.5em;
+    color:rgb(18, 0, 83);
+    font-weight: bold;
+}
+h5{
+    text-align: center;
+    font-size: 2.2em;
+    color:rgb(18, 0, 83);
+}
+h4{
+    text-align: right;
+}
+header{
+    width: 90%;
+}
+mark{
+    background-color:lightgrey;
+}
+a:link {
+    color:black;
+  }
+a:visited {
+    color:black;
+}
+img{
+    max-width: 100%;
+}
+figure{
+    float:right;
+}
+figcaption{
+    text-align: left;
+    font-style: italic;
+    font-size: 0.6em;
+}
+p{
+    margin-bottom: 1em;
+}
+.flex-box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.815);
+    width: 100%;
+}
+  
+.flex-box > div {
+    background-color: grey;
+    color: rgb(18, 0, 83);
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 25px;
+}
+.grid-container {
+    display: grid;
+}
+.grid-item {
+    padding: 20px;
+    font-size: 25px;
+    width: 100%;
+}
+.img-container{
+    display: grid;
+}
+footer{
+    text-align: right;
+    color: rgb(18, 0, 83);
+    margin-top: -3em;
+    font-size: 0.8em;
+}
+fieldset{
+    border-radius: 25px;
+    border-color:rgb(18, 0, 83);
+    font-size: large;
+}
+input{
+    border-radius: 25px;
+    margin-left: 0.5em;
+}
+legend{
+    font-size:x-large;
+    color: rgb(18, 0, 83);
+    font-style:oblique;
+}
+option{
+    margin-left: 1em;
+}
+#submit{
+    font-size: xx-large;
+    background-color:rgb(18, 0, 83) ;
+    color: white;
+    margin-top:0.7em;
+    border-radius: 25px;
+}
+input:invalid {
+    border: 2px solid #cb0101;
+}
+  
+input:valid {
+    border: 2px solid black;
+}
+#last{
+    color:#cb0101;
+}
+#pass{
+    color:#cb0101;
+    font-size:medium;
+    font-style: oblique;
+}
+#result{
+    color:#cb0101;
+    font-size:medium;
+    font-style: oblique;
+}
+/*Smartphones*/
+@media (max-width: 767px) {
+    .grid-item{
+        width: 80%;
+    }
+}
+@media (min-width: 768px){
+    .grid-item{
+        width: 95%;
+    }
+}
+
